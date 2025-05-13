@@ -6,6 +6,9 @@
   <title>Dream Catcher</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
     body {
       margin: 0;
       font-family: 'Roboto', sans-serif;
@@ -93,6 +96,11 @@
       font-style: italic;
       font-size: 0.95rem;
     }
+    #about, #contact {
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 3rem 2rem;
+      text-align: center;
+    }
     footer {
       background-color: #f2f2f2;
       color: #333;
@@ -128,17 +136,22 @@
       <input type="text" placeholder="Search...">
     </div>
     <nav>
-      <a href="#">Home</a>
+      <a href="#hero">Home</a>
       <a href="#about">About</a>
       <a href="#team">Team</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
 
-  <div class="hero">
+  <div class="hero" id="hero">
     <h1>Dream Catcher</h1>
     <p>We're building a wearable tFUS-based system to induce lucid dreams and help treat PTSD nightmares. Our tech activates the brain precisely during REM sleep.</p>
     <button>Contact Us</button>
+  </div>
+
+  <div id="about">
+    <h2>About Us</h2>
+    <p>We are a neurotechnology startup developing wearable brain stimulation to improve sleep, dreams, and mental health using tFUS technology.</p>
   </div>
 
   <div class="team-section" id="team">
@@ -172,6 +185,11 @@
     </div>
   </div>
 
+  <div id="contact">
+    <h2>Contact Us</h2>
+    <p>Email: contact@dreamcatcher.com<br>Phone: +972-50-000-0000</p>
+  </div>
+
   <footer>
     <div>
       <h4>ABOUT</h4>
@@ -179,7 +197,7 @@
     </div>
     <div>
       <h4>RESOURCES</h4>
-      <p><a href="#">Contact</a><br><a href="#">Privacy Policy</a></p>
+      <p><a href="#contact">Contact</a><br><a href="#">Privacy Policy</a></p>
     </div>
     <div class="social-icons">
       <h4>FOLLOW US</h4>
