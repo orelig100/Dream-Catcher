@@ -23,6 +23,7 @@
       align-items: center;
       padding: 1rem 2rem;
       background-color: rgba(0, 0, 0, 0.6);
+      flex-wrap: wrap;
     }
     .logo {
       font-size: 1.5rem;
@@ -66,18 +67,20 @@
       border-radius: 5px;
       cursor: pointer;
     }
-    #about, #contact {
-      background-color: rgba(0, 0, 0, 0.7);
+    #about, #contact, #how-it-works {
+      background-color: rgba(0, 0, 0, 0.75);
       padding: 3rem 2rem;
       text-align: center;
+    }
+    #how-it-works ol {
+      max-width: 600px;
+      margin: auto;
+      text-align: left;
     }
     .team-section {
       background-color: rgba(0, 0, 0, 0.8);
       padding: 3rem 2rem;
       text-align: center;
-    }
-    .team-section h2 {
-      margin-bottom: 2rem;
     }
     .team-members {
       display: flex;
@@ -100,7 +103,6 @@
     }
     .member p {
       margin-top: 0.25rem;
-      font-style: italic;
       font-size: 0.95rem;
     }
     footer {
@@ -129,6 +131,27 @@
       font-weight: bold;
       text-decoration: none;
     }
+    form input, form textarea {
+      padding: 0.5rem;
+      border: none;
+      border-radius: 5px;
+      margin: 0.5rem;
+      width: 80%;
+      max-width: 400px;
+    }
+    form button {
+      padding: 0.75rem 2rem;
+      background-color: #00c39a;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    video {
+      max-width: 90%;
+      border-radius: 12px;
+      margin-top: 2rem;
+    }
   </style>
 </head>
 <body>
@@ -140,6 +163,7 @@
     <nav>
       <a href="#hero">Home</a>
       <a href="#about">About</a>
+      <a href="#how-it-works">How it works</a>
       <a href="#team">Team</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -148,12 +172,26 @@
   <div class="hero" id="hero">
     <h1>Dream Catcher</h1>
     <p>We're building a wearable tFUS-based system to induce lucid dreams and help treat PTSD nightmares. Our tech activates the brain precisely during REM sleep.</p>
+    <video autoplay muted loop>
+      <source src="demo.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
     <button onclick="location.href='#contact'">Contact Us</button>
   </div>
 
   <div id="about">
     <h2>About Us</h2>
     <p>Dream Catcher is a multidisciplinary team aiming to revolutionize sleep and trauma therapy using non-invasive focused ultrasound. We combine neuroscience, engineering, and innovation to help users regain control over their dreams.</p>
+  </div>
+
+  <div id="how-it-works">
+    <h2>How It Works</h2>
+    <ol>
+      <li><strong>EEG Monitoring:</strong> Detects REM sleep in real-time.</li>
+      <li><strong>Nightmare Detection:</strong> Identifies stress patterns using AI.</li>
+      <li><strong>tFUS Activation:</strong> Applies focused ultrasound to trigger lucid awareness.</li>
+      <li><strong>Lucid Intervention:</strong> The dreamer takes control and exits the nightmare.</li>
+    </ol>
   </div>
 
   <div class="team-section" id="team">
@@ -163,13 +201,13 @@
         <img src="me.JPG" alt="Orel Cohen">
         <h4>Orel Cohen</h4>
         <p>Hardware Guy</p>
-         <p><a href="https://www.linkedin.com/in/orel-cohen-5829b9214/" style="color: #00c39a;">LinkedIn Profile</a></p>
+        <p><a href="https://www.linkedin.com/in/orel-cohen-5829b9214/" target="_blank" style="color: #00c39a;">LinkedIn Profile</a></p>
       </div>
       <div class="member">
         <img src="Shimon.jpg" alt="Shimon Funaro">
         <h4>Shimon</h4>
         <p>"Turning dreams into breakthroughs."</p>
-        <p><a href="https://www.linkedin.com/in/shimon-funaro"_blank" style="color: #00c39a;">LinkedIn Profile</a></p>
+        <p><a href="https://www.linkedin.com/in/shimon-funaro" target="_blank" style="color: #00c39a;">LinkedIn Profile</a></p>
       </div>
       <div class="member">
         <img src="Ofek.jpg" alt="Ofek Klein">
@@ -186,14 +224,19 @@
         <img src="Rotem.jpg" alt="Rotem Waxman">
         <h4>Rotem Waxman</h4>
         <p>"Dream engineering in action."</p>
-        <p><a href="https://www.linkedin.com/in/rotem-waxman-1240b7310/" style="color: #00c39a;">LinkedIn Profile</a></p>
+        <p><a href="https://www.linkedin.com/in/rotem-waxman-1240b7310/" target="_blank" style="color: #00c39a;">LinkedIn Profile</a></p>
       </div>
     </div>
   </div>
 
   <div id="contact">
     <h2>Contact Us</h2>
-    <p>Email: contact@dreamcatcher.com<br>Phone: +972-50-000-0000</p>
+    <form action="mailto:contact@dreamcatcher.com" method="post" enctype="text/plain">
+      <input type="text" name="name" placeholder="Your Name" required><br>
+      <input type="email" name="email" placeholder="Your Email" required><br>
+      <textarea name="message" placeholder="Your Message" rows="4"></textarea><br>
+      <button type="submit">Send</button>
+    </form>
   </div>
 
   <footer>
