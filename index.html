@@ -265,5 +265,35 @@
   <div class="linkedin-bar">
     Connect with me on <a href="https://www.linkedin.com/in/orel-cohen-5829b9214/" target="_blank">LinkedIn</a>
   </div>
+
+  <script>
+  const testimonials = [
+    {
+      name: "Emily R.",
+      img: "person1.png",
+      quote: "For the first time in years, I feel safe falling asleep."
+    },
+    {
+      name: "Michael S.",
+      img: "person2.png",
+      quote: "The lucid dream effect is real. I escaped the nightmare."
+    },
+    {
+      name: "Dalia N.",
+      img: "person3.png",
+      quote: "It felt like someone turned on the light in my dream."
+    }
+  ];
+
+  let current = 0;
+  setInterval(() => {
+    current = (current + 1) % testimonials.length;
+    document.getElementById("testimonial-name").innerText = testimonials[current].name;
+    document.getElementById("testimonial-img").src = testimonials[current].img;
+    document.getElementById("testimonial-quote").innerText = testimonials[current].quote;
+  }, 5000);
+</script>
+
 </body>
+
 </html>
